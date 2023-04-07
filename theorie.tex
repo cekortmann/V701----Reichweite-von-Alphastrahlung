@@ -1,3 +1,35 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+Durch die Messung der Reichweite von Alphastrahlung kann auch dessen
+Energie bestimmt werden. Durch Anregung und Dissoziation von Molekülen beim 
+Durchlaufen eines Materials verliert die Alphastrahlung an Energie. Dieser
+Energieverlust ist abhängig von der Energie der Alphastrahlung sowie der
+Dichte des durchlaufenen Materials und berechnet sich über die Bethe-Bloch-Gleichung
+\begin{equation}
+    -\frac{d E_\alpha}{d x}=\frac{z^2 e^4}{4 \pi \epsilon_0 m_e} \frac{n Z}{v^2} \ln \left(\frac{2 m_e v^2}{I}\right) \; .
+    \label{eqn: energieverlust}
+\end{equation}
+Dabei ist $z$ die Ladung und $v$ die Geschwindigkeit der Alphastrahlung; $Z$ die Ordnungszahl,
+$n$ die Teilchendichte und $I$ die Ionisierungsenergie des Targetgases. 
+
+Die Reichweite $R$ ist die Strecke bis zur vollständigen Abbremsung eines 
+Alphateilchens und berechnet sich durch 
+\begin{equation*}
+    R=\int_0^{E_\alpha} \frac{d E_\alpha}{-d E_\alpha / d x} \; .
+\end{equation*}
+Bei kleinen Energien nehmen Ladungsaustauschprozesse stark zu und der
+Energieverlust lässt sich nicht mehr durch die Bethe-Bloch-Gleichung 
+\eqref{eqn: energieverlust} beschreiben. Stattdessen nutzt man zur Bestimmung
+der mittleren Reichweite $R_{\symup{m}}$ empirisch bestimmte Kurven. Für 
+Energien $E_{\symup{\alpha}} \leq 2.5 \, \unit{\MeV}$ lässt sich die mittlere 
+Reichweite über $R_{\symup{m}} = 3.1 \cdot E_{\symup{\alpha}}^{3/2}$ bestimmen.
+
+In Gasen ist die Reichweite der Alphastrahlung proportional zum Druck und kann
+über eine Absorptionsmessung bestimmt werden, bei der der Druck variiert wird.
+Für die Reichweite gilt dann 
+\begin{equation*}
+    x = x_0 \frac{p}{p_0} \, .
+\end{equation*}
+Dabei ist $x_0$ der Abstand zwischen dem Detektor und dem Alphastrahler. 
+$p_0$ ist der Normaldruck $p_0 = 1013 \, \symup{mbar}$.
