@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import matplotlib_inline
+from scipy.stats import sem
 import numpy as np
 from numpy import sqrt
 import pandas as pd
@@ -12,6 +12,21 @@ from uncertainties.unumpy import uarray                     # Array von Fehler: 
 from uncertainties.unumpy import (nominal_values as noms,   # Wert:             noms(fehlerwert) = x
                                   std_devs as stds)         # Abweichung:       stds(fehlerarray) = errarray
 
-md = pd.read_csv('Abstand4.5cm.csv')
-# md_a = md.iloc[:, [0,1]]
-print(md.to_latex(index = False, column_format= "c c c c c c", decimal=',')) 
+
+n, N = np.genfromtxt('100Werte.txt', unpack=True, skip_header=1)
+
+mean=np.mean(N)
+sem=sem(N)
+std=np.std(N)
+var=std**2
+print(mean,"+-",sem,"Varianz=",var)
+
+
+plt.grid()
+plt.hist(N,bins=10,density=True,label="Verteilung der Messwerte")
+plt.xlabel(r'Zählrate pro 10 Sekunden')
+plt.ylabel(r'Relative Häufigkeit')
+plt.legend(loc='best')
+
+
+plt.savefig('build/histo.pdf', bbox_inches = "tight")
