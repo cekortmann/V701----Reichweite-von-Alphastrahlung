@@ -1,4 +1,4 @@
-Druck in mbar	Zählrate	Channel 	Energie in MeV	Maximum	effektive Länge
+Druck in mbar	Zaehlrate	Channel 	Energie in MeV	Maximum	effektive Lï¿½nge
 0	55341	831	4.0000	190	0.0000
 50	54428	816	3.9278	195	0.0015
 100	53962	791	3.8075	201	0.0030

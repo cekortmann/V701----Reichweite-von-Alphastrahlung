@@ -26,3 +26,4 @@ plt.grid(True)                          # grid style
 #plt.ylim(-0.05, 1.05)
 
 plt.savefig('build/3cmeffLaeng.pdf', bbox_inches = "tight")
+plt.show()
