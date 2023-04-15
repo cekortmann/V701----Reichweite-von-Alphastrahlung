@@ -24,6 +24,18 @@ plt.legend(loc="best")                  # legend position
 plt.grid(True)                          # grid style
 #plt.xlim(22, 40)
 #plt.ylim(-0.05, 1.05)
+p1, N1, chann1, E1, Nmax1, x1 = np.genfromtxt('Abstand3cmshort.txt', unpack=True, skip_header=1)
+
+def näherung(a,b,x):
+    return a*x+b
+
+params = curve_fit(näherung,x1,N1)
+a_fit = params[0][0]
+b_fit = params[0][1]
+h=np.linspace(0.0185,0.026,10)
+plt.plot(h, näherung(h,a_fit,b_fit), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
+
+print('a_fit', a_fit)
+print('b_fit', b_fit)
 
 plt.savefig('build/3cmeffLaeng.pdf', bbox_inches = "tight")
-plt.show()
