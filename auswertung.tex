@@ -9,6 +9,8 @@ Um die Reichweite von Alphastrahlung zu bestimmen muss der gemessene Channel des
 Channel bei einem Druck $p = 0\,\symup{mbar}$ einer Energie $E = 4 \,\unit{\MeV}$. Diese fällt dann linear ab. Neben dem Druck, der Zählrate, dem 
 Channel, der Energie und der Zählrate des jeweiligen Energiemaximums ist in \autoref{tab:3cm} auch noch die effektive Länge $x$ eingetragen. Diese
 berechnet sich durch \autoref{eqn:effLaeng}. Die Messung wurde bei einem Abstand zwischen Detektor und Probe von $x_0 = 3\,\unit{\cm}$ durchgeführt.
+\subsubsection{Erste Messreihe mit dem Abstand $x_0= 3\, \unit{\cm}$ vom Detektor}
+\label{sec:Erste Messreihe}
 
 \begin{table}
     \centering
@@ -46,15 +48,26 @@ berechnet sich durch \autoref{eqn:effLaeng}. Die Messung wurde bei einem Abstand
 Die letzten Messungen der Energie sind aufgrund der geringen Zählrate statistisch nicht mehr aussagekräftig.
 \begin{figure}
   \centering
-  \includegraphics[height= 6cm]{build/3cmeffLaeng.pdf}
+  \includegraphics[height= 8cm]{build/3cmeffLaeng.pdf}
   \caption{Graphische Auftragung der Zählrate gegen die effektive Länge bei dem Abstand 3 $\unit{\cm}$}
   \label{fig:3graph}
 \end{figure}
+Zur Bestimmung des Energieverlust aus \autoref{eqn: energieverlust} wird eine Ausgleichskurve durch die Stelle des steilsten Abfalls gelegt werden.
+Da diese Abnahme annähernd linear verläuft, wird eine Gerade der Form $f(x)=a*x+b$ verwendet.
+Die Ausgleichsgerade, welche die Werte zwischen der effektiven Länge $x= 0.0192\, \unit{\meter}$ und $x= 0.0252 \, \unit{\meter}$ berücksichtigt, wurde mittels \textbf{ZITAT MATPLOTBIB} bestimmt.
+Die Parameter der Geraden konnten so als
+\begin{align*}
+  a&=-173194.4797 \quad \text{und}\\
+  b&= 6704399.9883
+\end{align*}
+bestimmt werden.
+Da $-\frac{\text{d}E}{\text{d}x}$, also die Änderung pro effektiver Länge gesucht ist, gilt
+\begin{equation*}
+  -\frac{\text{d}E}{\text{d}x}=-a=173194.4797
+\end{equation*}
 
 
-
-
-
+\subsubsection{Zweite Messreihe mit dem Abstand $x_0= 4.5\, \unit{\cm}$ vom Detektor}
 Bei einer zweiten Messung wurde der Abstand zwischen Detektor und Probe auf $x_0 = 4.5 \,\unit{\cm}$ variiert. In \autoref{tab:4.5cm} sind erneut die 
 Messdaten zu Zählrate, Channel, Energie, Zählrate des Energiemaximums sowie der effektiven Länge dargestellt.
 
@@ -89,12 +102,29 @@ Messdaten zu Zählrate, Channel, Energie, Zählrate des Energiemaximums sowie de
 
 \begin{figure}
   \centering
-  \includegraphics[height= 6cm]{build/4.5cmeffLaeng.pdf}
+  \includegraphics[height= 8cm]{build/4.5cmeffLaeng.pdf}
   \caption{Graphische Auftragung der Zählrate gegen die effektive Länge bei dem Abstand 4.5 $\unit{\cm}$}
   \label{fig:4.5graph}
 \end{figure}
+Die Berechnung des Energieverlust für den zweiten Abstand erfolgt ganz analog zu jener in \autoref{sec:Erste Messreihe}.
+Nun wurden jedoch die Messwerte zwischen $x=0.0200\, \unit{\meter} \text{und} x= 0.0289 \, \unit{\meter}$ beachtet, da bei dem Abstand
+von $x_0=4.5 \, \unit{\cm}$ diese im Bereich des Abfallens liegen (siehe \autoref{tab:4.5cm}).
+Die Parameter der Ausgleichsgeraden lassen sich zu
+\begin{align*}
+  a= -90440.741 \quad \text{und}\\
+  b = 3145324.930
+\end{align*}
+berechnen.
+Für $-\frac{\text{d}E}{\text{d}x}$ folgt daraus
+\begin{equation*}
+  -\frac{\text{d}E}{\text{d}x}=-a = -90440.741 \; .
+\end{equation*}
 
-
+\newpage
+\subsection{Vergleich beider Energieverluste}
+Für $x_1= 3\,\unit{\cm} $ folgt $-\frac{\text{d}E}{\text{d}x}=173194.4797$ und für $x_2= 4.5\,\unit{\cm}$ folgt $-\frac{\text{d}E}{\text{d}x}=90440.741$ .
+Obwohl das Verhältnis von $x_1$ zu $x_2$ $\frac{2}{3}$ beträgt, stehen die Energieverluste im Verhältnis $\approx \frac{383}{200}=1.915$.
+Es ist also zu erkennen, dass mit zunehmendem Abstand der Energieverlust geringer wird.
 
 \subsection{Statistik des radioaktiven Zerfalls}
 In \autoref{fig:histo} befindet sich das Histogramm zur gemessenen Statistik des radioaktiven Zerfalls.
@@ -108,3 +138,6 @@ In \autoref{fig:histo} befindet sich das Histogramm zur gemessenen Statistik des
 
 Der Mittelwert berechnet sich mittels \autoref{eqn:Mittelwert} zu $\overline{N} = 2443.23 \pm 9.49$. Die Varianz
 der Messung liegt bei ${\Delta\overline{N}}^2 = 8913.197$.
+In \autoref{fig:histo} sind neben der tatsächlichen Messwerte auch Normal- und Poissonverteilung eingezeichnet.
+Zu sehen ist, dass die Normalverteilung viel näher an dem tatsächlichen Ausgang des Experiments liegt als die Poissonverteilung und somit 
+anhand dieser bessere Vorhersagen über die Verteilung treffen kann.

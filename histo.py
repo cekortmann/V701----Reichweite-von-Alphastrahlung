@@ -21,12 +21,17 @@ std=np.std(N)
 var=std**2
 print(mean,"+-",sem,"Varianz=",var)
 
+x1=np.linspace(np.min(n),np.max(n))
+
+gaus=np.random.normal(loc=mean,scale=std,size=10000)
+poii=np.random.poisson(lam=mean,size=10000)
 
 plt.grid()
 plt.hist(N,bins=10,density=True,label="Verteilung der Messwerte")
 plt.xlabel(r'Zählrate pro 10 Sekunden')
 plt.ylabel(r'Relative Häufigkeit')
+plt.hist(poii,bins=10,density=True,histtype="step",color="k",label="Poissonverteilung")
+plt.hist(gaus,bins=10,density=True,histtype="step",color="r",label="Normalverteilung")
 plt.legend(loc='best')
-
 
 plt.savefig('build/histo.pdf', bbox_inches = "tight")

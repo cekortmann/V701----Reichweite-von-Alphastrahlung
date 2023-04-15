@@ -27,7 +27,7 @@ plt.grid(True)                          # grid style
 p1, N1, chann1, E1, Nmax1, x1 = np.genfromtxt('Abstand3cmshort.txt', unpack=True, skip_header=1)
 
 def näherung(a,b,x):
-    return a*x+b
+    return -a*x-b
 
 params = curve_fit(näherung,x1,N1)
 a_fit = params[0][0]
