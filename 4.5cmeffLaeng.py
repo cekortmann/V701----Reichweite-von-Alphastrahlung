@@ -9,8 +9,7 @@ from uncertainties import ufloat                            # Fehler:           
 from uncertainties import unumpy as unp 
 from uncertainties.unumpy import uarray                     # Array von Fehler: fehlerarray =  uarray(array, errarray)
 from uncertainties.unumpy import (nominal_values as noms,   # Wert:             noms(fehlerwert) = x
-                                  std_devs as stds)         # Abweichung:       stds(fehlerarray) = errarray
-
+                                  std_devs as stds)
 
 p, N, chann, E, Nmax, x = np.genfromtxt('Abstand4.5cm.txt', unpack=True, skip_header=1)
 
@@ -24,8 +23,8 @@ plt.legend(loc="best")                  # legend position
 plt.grid(True)                          # grid style
 #plt.xlim(22, 40)
 #plt.ylim(-0.05, 1.05)
-def näherung(a,b,x):
-    return a*x+b
+#def näherung(a,b,x):
+#    return a*x+b
 
 #para1, pcov1 = curve_fit(näherung, x, N)
 #a,b,c,d,e= para1
@@ -43,15 +42,18 @@ def näherung(a,b,x):
 #print("ue",ue)
 #plt.plot(x, näherung(x,*para1), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
 
-p1, N1, chann1, E1, Nmax1, x1 = np.genfromtxt('Abstand4.5cmshort.txt', unpack=True, skip_header=1)
+#p1, N1, chann1, E1, Nmax1, x1 = np.genfromtxt('Abstand4.5cmshort.txt', unpack=True, skip_header=1)
+#params = curve_fit(näherung,x1,N1)
+#a_fit = params[0][0]
+#b_fit = params[0][1]
+#h=np.linspace(0.02,0.0285,10)
+#plt.plot(h, näherung(h,a_fit,b_fit), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
 
-params = curve_fit(näherung,x1,N1)
-a_fit = params[0][0]
-b_fit = params[0][1]
-h=np.linspace(0.02,0.0285,10)
-plt.plot(h, näherung(h,a_fit,b_fit), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
-
-print('a_fit', a_fit)
-print('b_fit', b_fit)
+#x,y = np.genfromtxt('avg4.5.txt', unpack=True, skip_header=0)
+#h1=np.linspace(0.0001,0.037,10)
+#plt.plot(y, x , 'orange', linewidth = 1, label = 'Mittelwert der Reichweiten', alpha=0.5)
+#print('a_fit', a_fit)
+#print('b_fit', b_fit)
+plt.legend(loc="best")
 plt.savefig('build/4.5cmeffLaeng.pdf', bbox_inches = "tight")
 

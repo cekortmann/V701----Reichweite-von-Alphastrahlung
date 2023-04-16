@@ -9,6 +9,8 @@ from uncertainties import unumpy as unp
 from uncertainties.unumpy import uarray                     # Array von Fehler: fehlerarray =  uarray(array, errarray)
 from uncertainties.unumpy import (nominal_values as noms,   # Wert:             noms(fehlerwert) = x
                                   std_devs as stds)  
+from scipy.stats import sem         # Abweichung:       stds(fehlerarray) = errarray
+
 
 def Blang(I,l):
     return 12.566*10**(-7)*1*3400*I/l
@@ -17,3 +19,10 @@ uI = ufloat(0.5, 0.1)
 ul = ufloat(0.102, 0.005)
 
 print(Blang(uI, ul))
+
+p, N, chann, E, Nmax, x = np.genfromtxt('Abstand4.5cm.txt', unpack=True, skip_header=1)
+y= ufloat(np.mean(N),sem(N))
+print("Mittelwert pm Standardabweichung = ",y)
+p, N, chann, E, Nmax, x = np.genfromtxt('Abstand3cm.txt', unpack=True, skip_header=1)
+y2= ufloat(np.mean(N),sem(N))
+print("Mittelwert pm Standardabweichung = ",y2)
