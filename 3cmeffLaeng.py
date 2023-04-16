@@ -34,8 +34,8 @@ b_fit = params[0][1]
 h=np.linspace(0.0185,0.026,10)
 plt.plot(h, näherung(h,a_fit,b_fit), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
 
-#print('a_fit', a_fit)
-#print('b_fit', b_fit)
+print('a_fit', a_fit)
+print('b_fit', b_fit)
 #x,y = np.genfromtxt('avg3.txt', unpack=True, skip_header=0)
 #h1=np.linspace(0.0001,0.037,10)
 #plt.plot(y, x , 'orange', linewidth = 1, label = 'Mittelwert der Reichweiten', alpha=0.5)

@@ -48,7 +48,8 @@ a_fit = params[0][0]
 b_fit = params[0][1]
 h=np.linspace(0.02,0.0285,10)
 plt.plot(h, näherung(h,a_fit,b_fit), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
-
+print('a_fit', a_fit)
+print('b_fit', b_fit)
 
 plt.legend(loc="best")
 plt.savefig('build/4.5cmeffLaeng.pdf', bbox_inches = "tight")
