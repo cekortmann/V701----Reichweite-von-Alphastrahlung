@@ -40,7 +40,7 @@ para1, pcov1 = curve_fit(näherung, x, N)
 #print("uc",uc)
 #print("ud",ud)
 #print("ue",ue)
-plt.plot(x, näherung(x,*para1), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
+#plt.plot(x, näherung(x,*para1), 'orange', linewidth = 1, label = 'Ausgleichskurve', alpha=0.5)
 
 p1, N1, chann1, E1, Nmax1, x1 = np.genfromtxt('Abstand4.5cmshort.txt', unpack=True, skip_header=1)
 params = curve_fit(näherung,x1,N1)
