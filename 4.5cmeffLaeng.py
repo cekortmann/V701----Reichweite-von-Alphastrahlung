@@ -26,7 +26,7 @@ plt.grid(True)                          # grid style
 def näherung(a,b,x):
     return a*x+b
 
-#para1, pcov1 = curve_fit(näherung, x, N)
+para1, pcov1 = curve_fit(näherung, x, N)
 #a,b,c,d,e= para1
 #pcov1 = np.sqrt(np.diag(pcov1))
 #fa, fb, fc ,fd,fe = pcov1
