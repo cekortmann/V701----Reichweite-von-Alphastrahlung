@@ -52,18 +52,37 @@ Die letzten Messungen der Energie sind aufgrund der geringen Zählrate statistis
   \caption{Graphische Auftragung der Zählrate gegen die effektive Länge bei dem Abstand 3 $\unit{\cm}$}
   \label{fig:3graph}
 \end{figure}
+Zur Bestimmung der mittleren Reichweite der $\alpha$-Strahlen wird durch eine Gerade der Bereich des starken Abfalls angenähert (siehe \autoref{fig:3graph}).
+Die Parameter der Geraden $y=ax+b$ ergeben sich so zu 
+\begin{align*}
+    a&=-173194.480\,\unit{\frac{1}{\meter}}\\
+    b&= 6704400.003
+\end{align*}
+Nun muss die Funktion nach $x$ umgestellt und für $y$ die Hälfte der maximal gezählten $\alpha$-Teilchen eingesetzt werden. 
+Es folgt 
+\begin{equation*}
+  R_{\text{m}}= \frac{\frac{y}{2}-b}{a}\. .
+\end{equation*}
+Mit eingesetzten Werten ergibt sich so die mittlere Reichweite $R_{\text{m}}$ zu
+\begin{equation*}
+  R_{\text{m}}=\frac{\frac{55341}{2}- 6704400.003\,\unit{\frac{1}{\meter}}}{-173194.480}=38.550\unit{\milli\metre}
+\end{equation*}
+Die dazugehörige Energie lässt sich mit \autoref{eqn:R_m} berechnen
+\begin{equation*}
+  E_{\alpha}=(\frac{R_m}{3.1})^{\frac{2}{3}}=5.368 \unit{\mega\electronvolt}\. .
+\end{equation*}
 \begin{figure}
   \centering
   \includegraphics[height= 8cm]{build/3cmenergie.pdf}
   \caption{Graphische Auftragung der Energie gegen die effektive Länge bei dem Abstand 3 $\unit{\cm}$}
   \label{fig:3energie}
 \end{figure}
-Zur Bestimmung des Energieverlust aus \autoref{eqn: energieverlust} wird eine Ausgleichskurve durch die Stelle des steilsten Abfalls gelegt werden (siehe \autoref{fig:3energie}).
+Zur Bestimmung des Energieverlust aus \autoref{eqn: energieverlust} wird eine Ausgleichskurve ermittelt (siehe \autoref{fig:3energie}).
 Da diese Abnahme annähernd linear verläuft, wird eine Gerade der Form $f(x)=a\cdot x+b$ verwendet.
 Die Parameter der Geraden konnten so als
 \begin{align*}
   a&=-4.2054\,  \unit{\frac{\text{M}\electronvolt}{\meter}} \quad \text{und}\\
-  b&= 127.0895\, \unit{\electronvolt}
+  b&= 127.0895\, \unit{\text{M}\electronvolt}
 \end{align*}
 bestimmt werden.
 Da $-\frac{\text{d}E}{\text{d}x}$, also die Änderung pro effektiver Länge gesucht ist, gilt
@@ -111,7 +130,21 @@ Messdaten zu Zählrate, Channel, Energie, Zählrate des Energiemaximums sowie de
   \caption{Graphische Auftragung der Zählrate gegen die effektive Länge bei dem Abstand 4.5 $\unit{\cm}$}
   \label{fig:4.5graph}
 \end{figure}
-
+Die mittlere Reichweite $R_{\text{m}}$ wird für diesen Abstand analog wie die in \autoref{sec:Erste Messreihe} berechnet (Darstellung siehe \autoref{fig:4.5graph}).
+Für die Ausgleichsgerade $y=ax+b$ ergeben sich dei Parameter 
+\begin{align*}
+  a&= -90440.741\\
+  b&= 3145324.930\. .
+\end{align*}
+Die mittlere Reichweite ergibt sich zu 
+\begin{equation*}
+  R_{\text{m}}= 34.605\, \unit{\milli \meter} 
+\end{equation*}
+Daraus Folgt die mittlere Energie $E_{\text{m}}$
+\begin{equation*}
+  E_{\text{m}}= 4.995\, \unit{\mega\electronvolt}
+\end{equation*}
+\newpage
 \begin{figure}
   \centering
   \includegraphics[height= 8cm]{build/4.5cmenergie.pdf}
@@ -131,11 +164,11 @@ Für $-\frac{\text{d}E}{\text{d}x}$ folgt daraus
   -\frac{\text{d}E}{\text{d}x}=-a = 3.4079\, \unit{\frac{\text{M}\electronvolt}{\meter}}\; .
 \end{equation*}
 
-\subsection{Vergleich beider Energieverluste}
-Für $x_1= 3\,\unit{\cm} $ folgt $-\frac{\text{d}E}{\text{d}x}=4.2054 \, \unit{\frac{\text{M}\electronvolt}{\meter}}$ und für $x_2= 4.5\,\unit{\cm}$ folgt $-\frac{\text{d}E}{\text{d}x}=3.4079 \,\unit{\frac{\text{M}\electronvolt}{\meter}}$ .
-Obwohl das Verhältnis von $x_1$ zu $x_2$ $\frac{2}{3}$ beträgt, stehen die Energieverluste im Verhältnis $\approx \frac{617}{500}=1.234$.
-Es ist also zu erkennen, dass mit zunehmendem Abstand der Energieverlust geringer wird.
-
+%\subsection{Vergleich beider Energieverluste}
+%Für $x_1= 3\,\unit{\cm} $ folgt $-\frac{\text{d}E}{\text{d}x}=4.2054 \, \unit{\frac{\text{M}\electronvolt}{\meter}}$ und für $x_2= 4.5\,\unit{\cm}$ folgt $-\frac{\text{d}E}{\text{d}x}=3.4079 \,\unit{\frac{\text{M}\electronvolt}{\meter}}$ .
+%Obwohl das Verhältnis von $x_1$ zu $x_2$ $\frac{2}{3}$ beträgt, stehen die Energieverluste im Verhältnis $\approx \frac{617}{500}=1.234$.
+%Es ist also zu erkennen, dass mit zunehmendem Abstand der Energieverlust geringer wird.
+\newpage
 \subsection{Statistik des radioaktiven Zerfalls}
 In \autoref{fig:histo} befindet sich das Histogramm zur gemessenen Statistik des radioaktiven Zerfalls.
 
